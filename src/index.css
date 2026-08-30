@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Claymorphism Elevation and Highlights */
+  .clay-card {
+    background: #FFFFFF;
+    border-radius: 28px;
+    box-shadow: 
+      0 16px 32px -4px rgba(45, 85, 75, 0.08),
+      0 6px 12px -2px rgba(45, 85, 75, 0.04),
+      inset 2px 2px 5px rgba(255, 255, 255, 0.95),
+      inset -3px -3px 7px rgba(130, 165, 155, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+  }
+
+  .clay-card-mint {
+    background: linear-gradient(135deg, #E6F8F3 0%, #D4F4EB 100%);
+    border-radius: 28px;
+    box-shadow: 
+      0 14px 28px -4px rgba(40, 140, 115, 0.12),
+      0 6px 12px -2px rgba(40, 140, 115, 0.06),
+      inset 3px 3px 6px rgba(255, 255, 255, 0.95),
+      inset -4px -4px 8px rgba(35, 130, 105, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+  }
+
+  .clay-card-blue {
+    background: linear-gradient(135deg, #EBF6FC 0%, #DCEFFB 100%);
+    border-radius: 28px;
+    box-shadow: 
+      0 14px 28px -4px rgba(35, 110, 160, 0.12),
+      0 6px 12px -2px rgba(35, 110, 160, 0.06),
+      inset 3px 3px 6px rgba(255, 255, 255, 0.95),
+      inset -4px -4px 8px rgba(30, 100, 150, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+  }
+
+  .clay-card-yellow {
+    background: linear-gradient(135deg, #FFF9E6 0%, #FFF3CC 100%);
+    border-radius: 28px;
+    box-shadow: 
+      0 14px 28px -4px rgba(180, 130, 30, 0.12),
+      0 6px 12px -2px rgba(180, 130, 30, 0.06),
+      inset 3px 3px 6px rgba(255, 255, 255, 0.95),
+      inset -4px -4px 8px rgba(170, 120, 20, 0.13);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+  }
+
+  .clay-card-coral {
+    background: linear-gradient(135deg, #FFF0ED 0%, #FFE2DC 100%);
+    border-radius: 28px;
+    box-shadow: 
+      0 14px 28px -4px rgba(180, 80, 60, 0.12),
+      0 6px 12px -2px rgba(180, 80, 60, 0.06),
+      inset 3px 3px 6px rgba(255, 255, 255, 0.95),
+      inset -4px -4px 8px rgba(170, 70, 50, 0.13);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+  }
+
+  .clay-btn {
+    box-shadow: 
+      0 8px 16px -2px rgba(45, 85, 75, 0.10),
+      inset 2px 2px 4px rgba(255, 255, 255, 0.8),
+      inset -2px -2px 4px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .clay-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 
+      0 12px 20px -2px rgba(45, 85, 75, 0.14),
+      inset 2px 2px 5px rgba(255, 255, 255, 0.9),
+      inset -2px -2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .clay-btn:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 
+      0 3px 6px -1px rgba(45, 85, 75, 0.08),
+      inset 3px 3px 6px rgba(0, 0, 0, 0.12),
+      inset -1px -1px 2px rgba(255, 255, 255, 0.6);
+  }
+
+  .clay-inset {
+    background: #EFF6F3;
+    border-radius: 20px;
+    box-shadow: 
+      inset 3px 3px 6px rgba(35, 70, 60, 0.10),
+      inset -3px -3px 6px rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .clay-pill {
+    border-radius: 9999px;
+    box-shadow: 
+      0 4px 10px rgba(45, 85, 75, 0.06),
+      inset 2px 2px 3px rgba(255, 255, 255, 0.9),
+      inset -2px -2px 3px rgba(35, 70, 60, 0.08);
+  }
+}
+
+/* Accessibility Font Size Scales */
+.font-scale-normal {
+  font-size: 15px;
+}
+.font-scale-large {
+  font-size: 17.5px;
+}
+.font-scale-large * {
+  font-size: 1.08em;
+}
+.font-scale-xlarge {
+  font-size: 20px;
+}
+.font-scale-xlarge * {
+  font-size: 1.18em;
+}
+
+/* High Contrast Mode Overrides */
+.high-contrast-mode {
+  background-color: #0A1411 !important;
+  color: #FFFFFF !important;
+}
+.high-contrast-mode .clay-card,
+.high-contrast-mode .clay-card-mint,
+.high-contrast-mode .clay-card-blue,
+.high-contrast-mode .clay-card-yellow,
+.high-contrast-mode .clay-card-coral {
+  background: #13241F !important;
+  color: #FFFFFF !important;
+  border: 2px solid #5DF0C8 !important;
+  box-shadow: 0 0 15px rgba(93, 240, 200, 0.2) !important;
+}
+.high-contrast-mode h1,
+.high-contrast-mode h2,
+.high-contrast-mode h3,
+.high-contrast-mode h4,
+.high-contrast-mode p,
+.high-contrast-mode span {
+  color: #F0FFF9 !important;
+}
+.high-contrast-mode .clay-inset {
+  background: #08110E !important;
+  border: 1px solid #366B5A !important;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif;
+  background-color: #F3F8F5;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(167, 232, 216, 0.35) 0%, transparent 40%),
+    radial-gradient(circle at 90% 10%, rgba(210, 238, 249, 0.45) 0%, transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(255, 243, 208, 0.35) 0%, transparent 50%);
+  background-attachment: fixed;
+}

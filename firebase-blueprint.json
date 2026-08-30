@@ -1,0 +1,122 @@
+{
+  "entities": {
+    "NoticeItem": {
+      "title": "NoticeItem",
+      "description": "공지사항 게시물",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "summary": { "type": "string" },
+        "content": { "type": "string" },
+        "date": { "type": "string" },
+        "author": { "type": "string" },
+        "views": { "type": "number" },
+        "isPinned": { "type": "boolean" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["title", "category", "content", "date"]
+    },
+    "PostItem": {
+      "title": "PostItem",
+      "description": "활동 게시물 (사진 선택사항)",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "description": { "type": "string" },
+        "imageSrc": { "type": "string" },
+        "date": { "type": "string" },
+        "likes": { "type": "number" },
+        "authorName": { "type": "string" },
+        "authorUid": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["title", "category", "date"]
+    },
+    "GroupChatMessage": {
+      "title": "GroupChatMessage",
+      "description": "일반 단체 실시간 채팅 메시지",
+      "type": "object",
+      "properties": {
+        "text": { "type": "string" },
+        "senderUid": { "type": "string" },
+        "senderName": { "type": "string" },
+        "senderEmail": { "type": "string" },
+        "senderPhoto": { "type": "string" },
+        "isAdmin": { "type": "boolean" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["text", "senderUid", "senderName"]
+    },
+    "DirectChatRoom": {
+      "title": "DirectChatRoom",
+      "description": "1대1 관리자 상담 대화방",
+      "type": "object",
+      "properties": {
+        "userUid": { "type": "string" },
+        "userName": { "type": "string" },
+        "userEmail": { "type": "string" },
+        "userPhoto": { "type": "string" },
+        "lastMessage": { "type": "string" },
+        "lastMessageTime": { "type": "string" },
+        "unreadByAdmin": { "type": "number" },
+        "unreadByUser": { "type": "number" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["userUid", "userName", "status"]
+    },
+    "DirectChatMessage": {
+      "title": "DirectChatMessage",
+      "description": "1대1 관리자 상담 대화 메시지",
+      "type": "object",
+      "properties": {
+        "text": { "type": "string" },
+        "senderUid": { "type": "string" },
+        "senderName": { "type": "string" },
+        "senderRole": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["text", "senderUid", "senderName"]
+    },
+    "AdminRecord": {
+      "title": "AdminRecord",
+      "description": "관리자 권한 계정",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string" },
+        "name": { "type": "string" },
+        "role": { "type": "string" },
+        "addedAt": { "type": "string" }
+      },
+      "required": ["email", "name", "role"]
+    }
+  },
+  "firestore": {
+    "/notices/{noticeId}": {
+      "schema": "NoticeItem",
+      "description": "특수학급 공지사항"
+    },
+    "/gallery/{galleryId}": {
+      "schema": "PostItem",
+      "description": "활동 게시물 (사진 유무 무관)"
+    },
+    "/group_chat_messages/{messageId}": {
+      "schema": "GroupChatMessage",
+      "description": "전체 일반 실시간 단체 채팅 메시지"
+    },
+    "/direct_chats/{chatId}": {
+      "schema": "DirectChatRoom",
+      "description": "1대1 관리자 상담 대화방 메타"
+    },
+    "/direct_chats/{chatId}/messages/{messageId}": {
+      "schema": "DirectChatMessage",
+      "description": "1대1 관리자 상담 개별 메시지"
+    },
+    "/admins/{adminId}": {
+      "schema": "AdminRecord",
+      "description": "관리자 목록"
+    }
+  }
+}

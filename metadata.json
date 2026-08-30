@@ -1,0 +1,6 @@
+{
+  "name": "중앙탑중학교 특수학급 포털 UI/UX",
+  "description": "중앙탑 중학교 특수학급 공식 홈페이지를 위한 부드러운 3D 클레이모피즘 스타일의 메인 UI/UX 디자인 시안",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

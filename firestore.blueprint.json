@@ -1,0 +1,82 @@
+{
+  "entities": {
+    "notices": {
+      "title": "공지사항",
+      "description": "중앙탑중학교 특수학급 실시간 공지사항",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "공지 제목" },
+        "content": { "type": "string", "description": "공지 본문 내용" },
+        "summary": { "type": "string", "description": "공지 요약" },
+        "category": { "type": "string", "description": "카테고리" },
+        "date": { "type": "string", "description": "작성일시 (YYYY.MM.DD)" },
+        "author": { "type": "string", "description": "작성자" },
+        "isPinned": { "type": "boolean", "description": "상단 고정 여부" },
+        "views": { "type": "number", "description": "조회수" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "content", "category"]
+    },
+    "posts": {
+      "title": "학급 게시물",
+      "description": "학생, 학부모, 교사가 함께 올리는 자유 이야기 및 활동 게시물 (사진 선택 가능)",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "게시물 제목" },
+        "content": { "type": "string", "description": "게시글 내용" },
+        "category": { "type": "string", "description": "분류" },
+        "imageSrc": { "type": "string", "description": "첨부 이미지 URL (선택 사항)" },
+        "author": { "type": "string", "description": "작성자 이름" },
+        "authorId": { "type": "string", "description": "작성자 UID" },
+        "authorPhoto": { "type": "string", "description": "작성자 프로필 사진" },
+        "date": { "type": "string", "description": "작성 일자" },
+        "likes": { "type": "number", "description": "좋아요 수" },
+        "comments": { "type": "array", "description": "댓글 목록" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "content", "category"]
+    },
+    "public_chats": {
+      "title": "일반 전체 채팅방",
+      "description": "학급 구성원 전체가 소통하는 실시간 열린 채팅방",
+      "type": "object",
+      "properties": {
+        "text": { "type": "string", "description": "메시지 내용" },
+        "senderId": { "type": "string", "description": "보낸이 UID" },
+        "senderName": { "type": "string", "description": "보낸이 이름/닉네임" },
+        "senderPhoto": { "type": "string", "description": "보낸이 프로필 사진" },
+        "senderRole": { "type": "string", "description": "보낸이 역할 (admin / user / guest)" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["text", "senderName"]
+    },
+    "consultation_rooms": {
+      "title": "1:1 관리자 상담 채팅방",
+      "description": "선생님과 학생/학부모 간의 1:1 상담 대화방",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "상담 신청자 UID 또는 고유 ID" },
+        "userName": { "type": "string", "description": "신청자 이름" },
+        "userEmail": { "type": "string", "description": "신청자 이메일" },
+        "lastMessage": { "type": "string", "description": "마지막 메시지" },
+        "lastMessageTime": { "type": "string", "format": "date-time" },
+        "unreadCountByAdmin": { "type": "number", "description": "선생님 미확인 수" },
+        "unreadCountByUser": { "type": "number", "description": "사용자 미확인 수" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "userName"]
+    },
+    "admins": {
+      "title": "관리자 목록",
+      "description": "포털 관리 권한을 가진 사용자",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "description": "관리자 이메일" },
+        "name": { "type": "string", "description": "관리자 이름" },
+        "role": { "type": "string", "description": "역할 (super_admin / teacher)" },
+        "addedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["email", "role"]
+    }
+  }
+}
