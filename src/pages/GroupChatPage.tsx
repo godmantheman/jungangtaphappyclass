@@ -154,7 +154,7 @@ export const GroupChatPage: React.FC<GroupChatPageProps> = ({ onBackToHome }) =>
             <span className="text-[#1F8269]">실시간 전체 채팅방</span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-[#173A31] flex items-center gap-3">
-            <span>참사랑학급 열린 나눔터</span>
+            <span>행복반 열린 나눔터</span>
             <span className="text-xs font-bold px-3 py-1 rounded-full bg-[#E5F7F1] text-[#1E735D] border border-[#C6ECE0] flex items-center gap-1">
               <span className="w-2 h-2 rounded-full bg-[#3EB895] animate-pulse" />
               실시간 참여 중

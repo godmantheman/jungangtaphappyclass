@@ -37,7 +37,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
                 </span>
                 <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#E8F8F2] text-[#1E745C] font-bold text-xs clay-pill border border-[#BEE7D8]">
                   <Heart className="w-3 h-3 text-[#E05353] fill-current" />
-                  참사랑학급 열린 소통 공간
+                  행복반 열린 소통 공간
                 </span>
               </div>
 
@@ -46,7 +46,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
                 <h1 className="text-2xl sm:text-4xl lg:text-[40px] font-extrabold text-[#19372F] leading-tight tracking-tight">
                   서로 배려하고 함께 성장하는<br />
                   <span className="text-[#20876C] bg-gradient-to-r from-[#20876C] to-[#2E99BE] bg-clip-text text-transparent">
-                    따뜻한 참사랑학급 포털
+                    따뜻한 행복반 포털
                   </span>
                 </h1>
                 <p className="text-sm sm:text-base text-[#4E6B63] font-medium leading-relaxed max-w-xl">
@@ -55,25 +55,25 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
               </div>
 
               {/* Action Buttons */}
-              <div className="pt-2 flex flex-wrap items-stretch sm:items-center gap-3">
+              <div className="pt-2 flex flex-wrap items-stretch sm:items-center gap-2">
                 <button
                   id="btn-hero-notice"
                   type="button"
                   onClick={onOpenNotice}
-                  className="px-5 py-3 rounded-2xl bg-[#22836B] hover:bg-[#1A6D58] text-white font-bold text-xs sm:text-sm clay-btn shadow-md flex items-center justify-center gap-2 group cursor-pointer transition-all"
+                  className="flex-1 sm:flex-none px-3 sm:px-5 py-2.5 sm:py-3 rounded-2xl bg-[#22836B] hover:bg-[#1A6D58] text-white font-bold text-[11px] sm:text-sm clay-btn shadow-md flex items-center justify-center gap-1.5 sm:gap-2 group cursor-pointer transition-all"
                 >
-                  <BellRing className="w-4 h-4" />
+                  <BellRing className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   <span>공지마당</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
 
                 <button
                   id="btn-hero-gallery"
                   type="button"
                   onClick={onOpenGallery}
-                  className="px-5 py-3 rounded-2xl bg-white hover:bg-[#F0FAF5] text-[#22725D] font-bold text-xs sm:text-sm border-2 border-[#D5EDE2] clay-pill shadow-xs flex items-center justify-center gap-2 group cursor-pointer transition-all"
+                  className="flex-1 sm:flex-none px-3 sm:px-5 py-2.5 sm:py-3 rounded-2xl bg-white hover:bg-[#F0FAF5] text-[#22725D] font-bold text-[11px] sm:text-sm border-2 border-[#D5EDE2] clay-pill shadow-xs flex items-center justify-center gap-1.5 sm:gap-2 group cursor-pointer transition-all"
                 >
-                  <FileText className="w-4 h-4 text-[#D88D16]" />
+                  <FileText className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D88D16]" />
                   <span>활동 이야기</span>
                 </button>
 
@@ -81,9 +81,9 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
                   id="btn-hero-chat"
                   type="button"
                   onClick={onOpenChat}
-                  className="px-4 py-3 rounded-2xl bg-[#E8F8F2] hover:bg-[#D5F2E8] text-[#1E745C] font-bold text-xs sm:text-sm border border-[#BEE7D8] clay-pill flex items-center justify-center gap-1.5 cursor-pointer transition-all"
+                  className="flex-1 sm:flex-none px-3 sm:px-4 py-2.5 sm:py-3 rounded-2xl bg-[#E8F8F2] hover:bg-[#D5F2E8] text-[#1E745C] font-bold text-[11px] sm:text-sm border border-[#BEE7D8] clay-pill flex items-center justify-center gap-1 sm:gap-1.5 cursor-pointer transition-all"
                 >
-                  <MessagesSquare className="w-4 h-4 text-[#22836B]" />
+                  <MessagesSquare className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#22836B]" />
                   <span>소통방</span>
                 </button>
 
@@ -91,9 +91,9 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
                   id="btn-hero-direct-chat"
                   type="button"
                   onClick={onOpenDirectChat}
-                  className="px-4 py-3 rounded-2xl bg-[#EBF3FF] hover:bg-[#D6E6FF] text-[#1B62D4] font-bold text-xs sm:text-sm border border-[#C6DCFF] clay-pill flex items-center justify-center gap-1.5 cursor-pointer transition-all"
+                  className="flex-1 sm:flex-none px-3 sm:px-4 py-2.5 sm:py-3 rounded-2xl bg-[#EBF3FF] hover:bg-[#D6E6FF] text-[#1B62D4] font-bold text-[11px] sm:text-sm border border-[#C6DCFF] clay-pill flex items-center justify-center gap-1 sm:gap-1.5 cursor-pointer transition-all"
                 >
-                  <MessageSquare className="w-4 h-4 text-[#2575FC]" />
+                  <MessageSquare className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#2575FC]" />
                   <span>1:1 상담</span>
                 </button>
               </div>
@@ -118,7 +118,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
                   <img
                     id="hero-3d-isometric-banner-img"
                     src={HERO_BANNER_DATA.bannerImage}
-                    alt="중앙탑중학교 참사랑학급 3D 일러스트 배너"
+                    alt="중앙탑중학교 행복반 3D 일러스트 배너"
                     referrerPolicy="no-referrer"
                     className="w-full h-auto object-cover transform group-hover:scale-[1.02] transition-transform duration-500"
                   />
@@ -130,7 +130,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
                         🏫
                       </div>
                       <div>
-                        <p className="text-xs font-extrabold text-[#1E4B3E]">중앙탑중학교 참사랑학급</p>
+                        <p className="text-xs font-extrabold text-[#1E4B3E]">중앙탑중학교 행복반</p>
                       </div>
                     </div>
                   </div>
