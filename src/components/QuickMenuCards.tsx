@@ -52,7 +52,7 @@ export const QuickMenuCards: React.FC<QuickMenuCardsProps> = ({ onSelectMenu }) 
               </span>
             </div>
             <h2 className="text-xl sm:text-2xl font-extrabold text-[#193B32] tracking-tight">
-              참사랑학급 바로가기
+              행복반 바로가기
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-[#5B7F74] font-medium">

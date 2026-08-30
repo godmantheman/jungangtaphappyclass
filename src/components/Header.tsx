@@ -48,9 +48,9 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header id="main-header" className="sticky top-0 z-40 backdrop-blur-md bg-white/85 border-b border-[#E3EFEA] transition-colors">
       {/* Top Utility Accessibility & Auth Bar */}
-      <div className="bg-[#EBF7F3] border-b border-[#D8EDE5] py-1.5 px-4 sm:px-8 text-xs text-[#3D6B5E]">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center gap-2 font-medium">
+      <div className="bg-[#EBF7F3] border-b border-[#D8EDE5] py-2 px-3 sm:px-8 text-xs text-[#3D6B5E]">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3">
+          <div className="flex flex-wrap items-center gap-2 font-medium">
             <span className="inline-flex items-center gap-1.5 bg-white/90 px-2.5 py-0.5 rounded-full clay-pill text-[#2C7A65] font-semibold text-[11px]">
               <Sparkles className="w-3 h-3 text-[#3EB895]" />
               웹 접근성 & 특수교육 지원 포털
@@ -60,15 +60,15 @@ export const Header: React.FC<HeaderProps> = ({
             </span>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-2">
             {/* Font Size Adjusters */}
             <div className="flex items-center bg-white/80 rounded-full px-2 py-0.5 clay-pill border border-[#D5EAE2]">
-              <span className="text-[11px] font-bold text-[#558376] mr-1.5">글자크기</span>
+              <span className="text-[11px] font-bold text-[#558376] mr-1">글자크기</span>
               <button
                 id="btn-font-normal"
                 type="button"
                 onClick={() => onUpdateSettings(s => ({ ...s, fontSize: 'normal' }))}
-                className={`px-2 py-0.5 text-xs font-bold rounded-full transition-all cursor-pointer ${
+                className={`px-1.5 py-0.5 text-[10px] font-bold rounded-full transition-all cursor-pointer ${
                   settings.fontSize === 'normal' 
                     ? 'bg-[#3EB895] text-white clay-pill shadow-xs' 
                     : 'text-[#558376] hover:bg-[#E5F3EE]'
@@ -81,7 +81,7 @@ export const Header: React.FC<HeaderProps> = ({
                 id="btn-font-large"
                 type="button"
                 onClick={() => onUpdateSettings(s => ({ ...s, fontSize: 'large' }))}
-                className={`px-2 py-0.5 text-xs font-bold rounded-full transition-all cursor-pointer ${
+                className={`px-1.5 py-0.5 text-[10px] font-bold rounded-full transition-all cursor-pointer ${
                   settings.fontSize === 'large' 
                     ? 'bg-[#3EB895] text-white clay-pill shadow-xs' 
                     : 'text-[#558376] hover:bg-[#E5F3EE]'
@@ -94,7 +94,7 @@ export const Header: React.FC<HeaderProps> = ({
                 id="btn-font-xlarge"
                 type="button"
                 onClick={() => onUpdateSettings(s => ({ ...s, fontSize: 'xlarge' }))}
-                className={`px-2 py-0.5 text-xs font-bold rounded-full transition-all cursor-pointer ${
+                className={`px-1.5 py-0.5 text-[10px] font-bold rounded-full transition-all cursor-pointer ${
                   settings.fontSize === 'xlarge' 
                     ? 'bg-[#3EB895] text-white clay-pill shadow-xs' 
                     : 'text-[#558376] hover:bg-[#E5F3EE]'
@@ -110,15 +110,15 @@ export const Header: React.FC<HeaderProps> = ({
               id="btn-toggle-contrast"
               type="button"
               onClick={() => onUpdateSettings(s => ({ ...s, highContrast: !s.highContrast }))}
-              className={`flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold clay-btn transition-all cursor-pointer ${
+              className={`flex items-center gap-0.5 px-2 py-0.5 rounded-full text-[10px] font-semibold clay-btn transition-all cursor-pointer ${
                 settings.highContrast 
                   ? 'bg-[#1D352F] text-[#FFE885] border border-[#FFE885]' 
                   : 'bg-white text-[#3D6B5E] hover:bg-[#E4F5EF]'
               }`}
               title="고대비 흑백 모드 토글"
             >
-              {settings.highContrast ? <SunMedium className="w-3.5 h-3.5" /> : <Moon className="w-3.5 h-3.5" />}
-              <span>{settings.highContrast ? '고대비 ON' : '고대비'}</span>
+              {settings.highContrast ? <SunMedium className="w-3 h-3" /> : <Moon className="w-3 h-3" />}
+              <span className="hidden sm:inline">{settings.highContrast ? '고대비 ON' : '고대비'}</span>
             </button>
 
             {/* Reading Guide Ruler */}
@@ -126,15 +126,15 @@ export const Header: React.FC<HeaderProps> = ({
               id="btn-toggle-reading-guide"
               type="button"
               onClick={() => onUpdateSettings(s => ({ ...s, readingGuide: !s.readingGuide }))}
-              className={`flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold clay-btn transition-all cursor-pointer ${
+              className={`flex items-center gap-0.5 px-2 py-0.5 rounded-full text-[10px] font-semibold clay-btn transition-all cursor-pointer ${
                 settings.readingGuide 
                   ? 'bg-[#3EB895] text-white' 
                   : 'bg-white text-[#3D6B5E] hover:bg-[#E4F5EF]'
               }`}
               title="읽기 가이드라인 활성화"
             >
-              <Eye className="w-3.5 h-3.5" />
-              <span className="hidden md:inline">읽기안내선</span>
+              <Eye className="w-3 h-3" />
+              <span className="hidden lg:inline">읽기안내선</span>
             </button>
           </div>
         </div>
@@ -161,7 +161,7 @@ export const Header: React.FC<HeaderProps> = ({
               </span>
             </div>
             <p className="text-xs text-[#63877D] font-medium tracking-wide">
-              참사랑학급 공식 포털 · Inclusive Education
+              행복반 공식 포털 · Inclusive Education
             </p>
           </div>
         </div>

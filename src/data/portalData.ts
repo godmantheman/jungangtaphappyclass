@@ -6,9 +6,9 @@ import { QuickMenuItem } from '../types';
 
 export const HERO_BANNER_DATA = {
   schoolName: '중앙탑중학교',
-  subName: '특수교육지원실 · 참사랑학급',
+  subName: '특수교육지원실 · 행복반',
   englishTitle: 'JUNGANGTAP SPECIAL EDUCATION PORTAL',
-  tagline: '서로 배려하고 함께 성장하는 따뜻한 참사랑학급',
+  tagline: '서로 배려하고 함께 성장하는 따뜻한 행복반',
   caption: '중앙탑중학교 특수학급의 주요 공지사항과 학생들의 다양한 활동 모습, 실시간 소통 및 1:1 상담을 편리하게 이용하실 수 있습니다.',
   bannerImage: heroImg,
 };

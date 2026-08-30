@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
             </div>
             <div>
               <h4 className="font-extrabold text-base text-[#193C32]">
-                중앙탑중학교 특수교육지원실 · 참사랑학급
+                중앙탑중학교 특수교육지원실 · 행복반
               </h4>
               <p className="text-xs text-[#6B8E83]">
                 JUNGANGTAP MIDDLE SCHOOL INCLUSIVE EDUCATION
@@ -55,7 +55,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Copyright */}
         <div className="pt-3 border-t border-[#D8EDE4] flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-[#7A9C92]">
-          <p>© 2026 중앙탑중학교 참사랑학급. All rights reserved.</p>
+          <p>© 2026 중앙탑중학교 행복반. All rights reserved.</p>
           <span>웹 접근성 지원 포털</span>
         </div>
 
