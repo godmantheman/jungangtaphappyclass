@@ -48,60 +48,62 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header id="main-header" className="sticky top-0 z-40 backdrop-blur-md bg-white/85 border-b border-[#E3EFEA] transition-colors">
       {/* Top Utility Accessibility & Auth Bar */}
-      <div className="bg-[#EBF7F3] border-b border-[#D8EDE5] py-2 px-3 sm:px-8 text-xs text-[#3D6B5E]">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3">
-          <div className="flex flex-wrap items-center gap-2 font-medium">
-            <span className="inline-flex items-center gap-1.5 bg-white/90 px-2.5 py-0.5 rounded-full clay-pill text-[#2C7A65] font-semibold text-[11px]">
-              <Sparkles className="w-3 h-3 text-[#3EB895]" />
-              웹 접근성 & 특수교육 지원 포털
+      <div className="bg-[#EBF7F3] border-b border-[#D8EDE5] py-1.5 px-2 sm:px-8 text-xs text-[#3D6B5E] overflow-x-hidden">
+        <div className="flex flex-col gap-2">
+          {/* First Row - Portal Label */}
+          <div className="flex items-center justify-center sm:justify-start gap-2 min-w-0">
+            <span className="inline-flex items-center gap-1 bg-white/90 px-2 py-0.5 rounded-full clay-pill text-[#2C7A65] font-semibold text-[10px] flex-shrink-0 whitespace-nowrap">
+              <Sparkles className="w-2.5 h-2.5 text-[#3EB895]" />
+              웹접근성 지원
             </span>
-            <span className="hidden sm:inline text-[#6B9084]">
+            <span className="hidden sm:inline text-[#6B9084] text-[11px]">
               누구나 편리하게 이용할 수 있는 유니버설 디자인 환경입니다
             </span>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2">
+          {/* Second Row - Controls */}
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-1.5">
             {/* Font Size Adjusters */}
-            <div className="flex items-center bg-white/80 rounded-full px-2 py-0.5 clay-pill border border-[#D5EAE2]">
-              <span className="text-[11px] font-bold text-[#558376] mr-1">글자크기</span>
+            <div className="flex items-center bg-white/80 rounded-full px-1.5 py-0.5 clay-pill border border-[#D5EAE2] flex-shrink-0">
+              <span className="text-[9px] font-bold text-[#558376] mr-0.5">글자</span>
               <button
                 id="btn-font-normal"
                 type="button"
                 onClick={() => onUpdateSettings(s => ({ ...s, fontSize: 'normal' }))}
-                className={`px-1.5 py-0.5 text-[10px] font-bold rounded-full transition-all cursor-pointer ${
+                className={`px-1 py-0.5 text-[9px] font-bold rounded-full transition-all cursor-pointer ${
                   settings.fontSize === 'normal' 
                     ? 'bg-[#3EB895] text-white clay-pill shadow-xs' 
                     : 'text-[#558376] hover:bg-[#E5F3EE]'
                 }`}
                 title="기본 글자 크기"
               >
-                보통
+                보
               </button>
               <button
                 id="btn-font-large"
                 type="button"
                 onClick={() => onUpdateSettings(s => ({ ...s, fontSize: 'large' }))}
-                className={`px-1.5 py-0.5 text-[10px] font-bold rounded-full transition-all cursor-pointer ${
+                className={`px-1 py-0.5 text-[9px] font-bold rounded-full transition-all cursor-pointer ${
                   settings.fontSize === 'large' 
                     ? 'bg-[#3EB895] text-white clay-pill shadow-xs' 
                     : 'text-[#558376] hover:bg-[#E5F3EE]'
                 }`}
                 title="큰 글자 크기"
               >
-                크게
+                크
               </button>
               <button
                 id="btn-font-xlarge"
                 type="button"
                 onClick={() => onUpdateSettings(s => ({ ...s, fontSize: 'xlarge' }))}
-                className={`px-1.5 py-0.5 text-[10px] font-bold rounded-full transition-all cursor-pointer ${
+                className={`px-1 py-0.5 text-[9px] font-bold rounded-full transition-all cursor-pointer ${
                   settings.fontSize === 'xlarge' 
                     ? 'bg-[#3EB895] text-white clay-pill shadow-xs' 
                     : 'text-[#558376] hover:bg-[#E5F3EE]'
                 }`}
                 title="아주 큰 글자 크기"
               >
-                더크게
+                대
               </button>
             </div>
 
@@ -110,15 +112,15 @@ export const Header: React.FC<HeaderProps> = ({
               id="btn-toggle-contrast"
               type="button"
               onClick={() => onUpdateSettings(s => ({ ...s, highContrast: !s.highContrast }))}
-              className={`flex items-center gap-0.5 px-2 py-0.5 rounded-full text-[10px] font-semibold clay-btn transition-all cursor-pointer ${
+              className={`flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-[9px] font-semibold clay-btn transition-all cursor-pointer flex-shrink-0 ${
                 settings.highContrast 
                   ? 'bg-[#1D352F] text-[#FFE885] border border-[#FFE885]' 
                   : 'bg-white text-[#3D6B5E] hover:bg-[#E4F5EF]'
               }`}
               title="고대비 흑백 모드 토글"
             >
-              {settings.highContrast ? <SunMedium className="w-3 h-3" /> : <Moon className="w-3 h-3" />}
-              <span className="hidden sm:inline">{settings.highContrast ? '고대비 ON' : '고대비'}</span>
+              {settings.highContrast ? <SunMedium className="w-2.5 h-2.5" /> : <Moon className="w-2.5 h-2.5" />}
+              <span className="hidden sm:inline">고대비</span>
             </button>
 
             {/* Reading Guide Ruler */}
@@ -126,15 +128,15 @@ export const Header: React.FC<HeaderProps> = ({
               id="btn-toggle-reading-guide"
               type="button"
               onClick={() => onUpdateSettings(s => ({ ...s, readingGuide: !s.readingGuide }))}
-              className={`flex items-center gap-0.5 px-2 py-0.5 rounded-full text-[10px] font-semibold clay-btn transition-all cursor-pointer ${
+              className={`flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-[9px] font-semibold clay-btn transition-all cursor-pointer flex-shrink-0 ${
                 settings.readingGuide 
                   ? 'bg-[#3EB895] text-white' 
                   : 'bg-white text-[#3D6B5E] hover:bg-[#E4F5EF]'
               }`}
               title="읽기 가이드라인 활성화"
             >
-              <Eye className="w-3 h-3" />
-              <span className="hidden lg:inline">읽기안내선</span>
+              <Eye className="w-2.5 h-2.5" />
+              <span className="hidden md:inline">읽기</span>
             </button>
           </div>
         </div>
